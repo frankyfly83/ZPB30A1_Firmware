@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include "adc.h"
 #include "load.h"
+#include "ci.h"
+
+int8_t ci_message = 0;
 
 void uart_init()
 {
@@ -57,10 +60,11 @@ void uart_timer()
 	}
 }
 
-
 void uart_rx_irq() __interrupt(ITC_IRQ_UART2_RX)
 {
-	char tmp = UART2->DR;
+	ci_message = ci_input(UART2->DR);
+	
+	
 	//TODO: Calibration mode
 	//TODO: Remote control
 }

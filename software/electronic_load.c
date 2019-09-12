@@ -1,5 +1,9 @@
 #include "config.h"
+
 #include "uart.h"
+#include "ci.h"
+#include "scpi.h"
+
 #include "utils.h"
 #include "ui.h"
 #include "stdio.h"
@@ -86,6 +90,17 @@ void main(void) {
 			uart_timer();
 			systick_flag &= ~SYSTICK_COUNT;
 		}
+		
+		
+		
+		
+		if (ci_message > 0){
+			
+		}else{
+			
+		}   
+		
+		
 	}
 }
 

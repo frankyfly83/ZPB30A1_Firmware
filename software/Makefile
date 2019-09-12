@@ -6,8 +6,21 @@ PROCESSOR=STM8S005K6
 STLINK_VERSION=2
 
 MAIN=electronic_load.c
-SRC=tm1650.c uart.c utils.c fan.c ui.c eeprom.c timer.c load.c settings.c \
- 	adc.c beeper.c menu_items.c
+SRC= tm1650.c   \
+     ci.c       \
+     scpi.c     \
+     uart.c     \
+     utils.c    \
+     fan.c      \
+     ui.c       \
+     eeprom.c   \
+     timer.c    \
+     load.c     \
+     settings.c \
+     adc.c      \
+     beeper.c   \
+     menu_items.c
+     
 BUILDDIR=build
 
 SRC:=$(MAIN) $(SRC)
